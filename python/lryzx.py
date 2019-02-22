@@ -44,7 +44,7 @@ for round in range(0, trainRounds):
         if lineNum == 0:
             for data in trainData:
                 clk = data[0]
-                mp = data[1]
+                mp = data[1] # market price/paying price/winning price
                 fsid = 2 # feature start id
                 # predict
                 pred = 0.0
