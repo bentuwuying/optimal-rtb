@@ -72,13 +72,9 @@ original_ctr = 0.   # original ctr from train data
 
 # read in train data for original_ecpc and original_ctr
 fi = open(sys.argv[1], 'r') # train.yzx.txt
-first = True
 imp_num = 0
 for line in fi:
     s = line.split(' ')
-    if first:
-        first = False
-        continue
     click = int(s[0])  # y
     cost = int(s[1])  # z
     imp_num += 1
