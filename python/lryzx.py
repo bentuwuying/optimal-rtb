@@ -105,7 +105,7 @@ for round in range(0, trainRounds):
 
 # output the weights
 fo = open(sys.argv[1] + '.lr.weight', 'w')
-featvalue = sorted(featWeight.iteritems(), key=operator.itemgetter(0))
+featvalue = sorted(featWeight.items(), key=operator.itemgetter(0))
 for fv in featvalue:
     fo.write(str(fv[0]) + '\t' + str(fv[1]) + '\n')
 fo.close()
@@ -118,7 +118,7 @@ fo = open(sys.argv[2] + '.lr.pred', 'w')
 for line in fi:
     data = ints(line.replace(":1", "").split())
     pred = 0.0
-    for i in range(1, len(data)):
+    for i in range(2, len(data)):
         feat = data[i]
         if feat in featWeight:
             pred += featWeight[feat]
